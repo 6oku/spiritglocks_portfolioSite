@@ -102,7 +102,7 @@
   @media (max-width: 768px) {
     .nav > a {
       font-size: 0.9rem;
-      padding: 4px 4px;
+      padding: 3px 3px;
       margin-top: 12px;
     }
   }
@@ -148,7 +148,7 @@
   .nav > a{
     display: block;
     width: 97vw;
-    padding: 8px 12px 8px 12px;
+    padding: 6px 12px 6px 12px;
     color: rgb(255, 255, 255) ! important;
     text-decoration: none;
     background-color: #00000000;
