@@ -110,7 +110,7 @@
   @media (max-width: 480px) {
     .nav > a {
       font-size: 0.8rem;
-      padding: 4px 6px;
+      padding: 3px 3px;
       margin: 6px 0;
     }
   }
