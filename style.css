@@ -52,6 +52,7 @@
   src: url('./FONTS/POR7AL_10.30.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -59,11 +60,13 @@
   src: url('./FONTS/Kodama.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family:"din-2014" ;
   src: url(href="https://use.typekit.net/wrr7eua.css);
+  font-display: swap;
 }
 
 @font-face {
@@ -71,6 +74,7 @@
   src: url('./FONTS/GeistMono-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 .hiddeninfo{
