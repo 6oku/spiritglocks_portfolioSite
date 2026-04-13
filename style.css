@@ -87,7 +87,7 @@
 
 @media (max-width: 768px) {
   .hiddeninfo {
-    font-size: 0.9rem;
+    font-size: 1.1vw;
     padding: 3px 3px;
     margin-top: 12px;
   }
@@ -495,7 +495,7 @@ p, h1, h2{
   padding: 1vw;
   min-height:70vh;
   position:sticky;
-  overflow: hidden;
+  overflow: visible;
   width: 100%;
   top: 0px;
   .header{
@@ -965,9 +965,15 @@ p, h1, h2{
 @media (max-width: 768px) {
   #asciiArt {
     font-size: clamp(2.4px, 0.72vw, 10px);
-    transform: scaleX(1.6) scaleY(2);
+    transform: scale(1.45);
     transform-origin: top center;
     margin: -8vh auto 0;
+  }
+}
+
+@media (max-width: 480px) {
+  #asciiArt {
+    transform: scaleX(1.6) scaleY(2);
   }
 }
 
