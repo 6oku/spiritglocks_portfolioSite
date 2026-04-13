@@ -493,6 +493,7 @@ p, h1, h2{
   position:sticky;
   width: 100%;
   top: 0px;
+  overflow: visible;
   .header{
     display: flex;
     width: 100%;
@@ -921,20 +922,21 @@ p, h1, h2{
 /* ASCII hero */
 #asciiArt {
   font-family: monospace;
-  font-size: clamp(2.4px, 0.72vw, 10px);
+  font-size: clamp(4px, 0.85vw, 12px);
   line-height: 1.05;
   text-align: center;
   margin: -8vh auto 0;
   color: var(--text);
   user-select: none;
-  overflow: hidden;
+  overflow: visible;
   letter-spacing: 0.05em;
   white-space: pre;
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {
   #asciiArt {
-    font-size: clamp(2.4px, 0.8vw, 4px);
+    font-size: clamp(2.8px, 0.9vw, 5px);
     margin: -4vh auto 0;
   }
 }
