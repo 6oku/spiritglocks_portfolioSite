@@ -997,9 +997,6 @@ p, h1, h2{
   filter: invert(0.85);
 }
 
-html, body {
-  overflow-x: hidden;
-}
 
 /* Smooth transition for theme changes */
 body, .four, .five, .nav, .button, .nav > a, .fontplay .text-wrapper, .fontplay2 .text-wrapper {
