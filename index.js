@@ -1,5 +1,3 @@
-console.log("TEST")
-
 const main = document.querySelector('main')
 var imgs = document.querySelectorAll('.thing > img');
 var open = false;
@@ -7,7 +5,6 @@ var open = false;
 imgs.forEach(function(img){
   img.onclick = (e) =>{
     var target = e.target;
-    console.log(target)
     openMe(target.src)
   }
 
@@ -17,7 +14,6 @@ imgs.forEach(function(img){
         var src = e.target.src;
         var image = document.querySelector('.window img');
         image.src = src;
-        console.log('yote')
       }, 500)
     }
   }
@@ -29,7 +25,6 @@ document.querySelector('.window').onclick = () =>{
 
 const openMe = (src) => {
   open = true;
-  console.log("OPEN:", open)
   main.classList.add('focus')
   var image = document.querySelector('.window img');
   image.src = src;
@@ -69,8 +64,6 @@ const closeMe = () =>{
       var win = document.querySelector('.window');
       win.classList.remove('active');
       open = false;
-      console.log("OPEN:", open)
-      console.log("finished")
     }
   });
 }
