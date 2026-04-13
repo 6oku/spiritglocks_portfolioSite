@@ -491,6 +491,7 @@ p, h1, h2{
   padding: 1vw;
   min-height:70vh;
   position:sticky;
+  overflow: hidden;
   width: 100%;
   top: 0px;
   .header{
@@ -990,6 +991,10 @@ p, h1, h2{
 
 [data-theme="dark"] .theme-toggle-img:hover {
   filter: invert(0.85);
+}
+
+html, body {
+  overflow-x: hidden;
 }
 
 /* Smooth transition for theme changes */
