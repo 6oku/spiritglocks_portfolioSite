@@ -960,9 +960,9 @@ p, h1, h2{
 @media (max-width: 768px) {
   #asciiArt {
     font-size: clamp(2.4px, 0.72vw, 10px);
-    transform: scale(1.6);
+    transform: scaleX(1.6) scaleY(2);
     transform-origin: top center;
-    margin: -2vh auto 0;
+    margin: -8vh auto 0;
   }
 }
 
