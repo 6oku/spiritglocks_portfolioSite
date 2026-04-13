@@ -1,39 +1,14 @@
-// var m = gsap.from('')
-
 console.log("TEST")
 
 const main = document.querySelector('main')
 var imgs = document.querySelectorAll('.thing > img');
-
-var current = {
-  x: 0,
-  y:0,
-  w:0,
-  h:0,
-}
-
 var open = false;
 
 imgs.forEach(function(img){
   img.onclick = (e) =>{
     var target = e.target;
-    var w = target.getBoundingClientRect().width;
-    var h = target.getBoundingClientRect().height;
-    var x = target.getBoundingClientRect().left;
-    var y = target.getBoundingClientRect().top;
-    // console.log(w, h, x, y)
-
     console.log(target)
-    
-
-    current.x = x;
-    current.y = y;
-    current.w = w;
-    current.h = h;
-
-    console.log(current)
-
-    openMe(current.x,current.y,current.w,current.h,target.src)
+    openMe(target.src)
   }
 
   img.onmouseover = (e) =>{
@@ -49,92 +24,53 @@ imgs.forEach(function(img){
 })
 
 document.querySelector('.window').onclick = () =>{
-  // if(open == true){
-    closeMe(current.x,current.y,current.w,current.h)
-  // }
+  closeMe()
 }
 
-const openMe = (x,y,w,h,src) => {
-  open=true;
+const openMe = (src) => {
+  open = true;
   console.log("OPEN:", open)
   main.classList.add('focus')
   var image = document.querySelector('.window img');
   image.src = src;
 
-  var t = gsap.fromTo(".window", 
+  gsap.fromTo(".window",
     {
-      duration: 0.5, 
-      x: x+'px',
-      y: y+'px', 
-      width: w+'px',
-      height: h+'px',
-      ease: "power3", 
-      paused: true,
-      padding: '0px',
-      opacity: 1,
+      opacity: 0,
+      pointerEvents: "none",
     },
     {
-      duration: 0.5, 
-      x: 0,
-      y: 0, 
-      width: '100%',
-      height: '100%',
-      ease: "power3",
-      padding: '20px',
       opacity: 1,
+      duration: 0.35,
+      ease: "power2.out",
       pointerEvents: "auto",
-    },
+      onStart: function() {
+        var win = document.querySelector('.window');
+        win.style.top = '0px';
+        win.style.left = '0px';
+        win.style.width = '100%';
+        win.style.height = '100%';
+        win.style.padding = '20px';
+        win.classList.add('active');
+      }
+    }
   );
-
-
-  t.play();
 }
 
-const closeMe = (x,y,w,h) =>{
+const closeMe = () =>{
   main.classList.remove('focus')
-  var s = gsap.fromTo(".window", 
-  {
-    duration: 0.5, 
-    x: 0,
-    y: 0, 
-    width: '100%',
-    height: '100%',
-    ease: "power3", 
-    padding: '20px',
-    paused: true,
-  },
-  {
-    duration: 0.5, 
-    x: x+'px',
-    y: y+'px', 
-    width: w+'px',
-    height: h+'px',
-    ease: "power3", 
-    padding: '0px',
-    paused: true,
-    onComplete: finished,
-  }
-  );
 
-  s.play();
-}
-
-const finished = () =>{
-  var o = gsap.to('.window',
-  {
+  gsap.to(".window", {
     opacity: 0,
-    duration: 0.3,
-    // delay: 0.3,
+    duration: 0.25,
+    ease: "power2.in",
     pointerEvents: "none",
-    paused: true,
-  })
-  o.play();
-
-  setTimeout(()=>{
-    open=false;
-    console.log("OPEN:", open)
-    console.log("finished")
-  }, 500)
+    onComplete: function() {
+      var win = document.querySelector('.window');
+      win.classList.remove('active');
+      open = false;
+      console.log("OPEN:", open)
+      console.log("finished")
+    }
+  });
 }
-
-
