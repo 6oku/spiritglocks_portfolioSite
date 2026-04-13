@@ -66,11 +66,9 @@
   src: url(href="https://use.typekit.net/wrr7eua.css);
 }
 
-import { Geist, Geist_Mono } from 'next/font/google'
-
 @font-face {
   font-family: 'Geist Mono';
-  src: url('./FONTS/.GeistMono-Regular') format('woff');
+  src: url('./FONTS/GeistMono-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
