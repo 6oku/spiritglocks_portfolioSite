@@ -580,9 +580,12 @@ p, h1, h2{
     }
     .meta{
       padding: 3px;
-      width: fit-content;
+      flex-grow: 1;
       border-right: 1px solid var(--four-text);
-      line-height: 1.4em;;
+      line-height: 1.4em;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
       .title{
         font-size: 25px;
         text-transform: uppercase;
@@ -593,16 +596,35 @@ p, h1, h2{
         font-size: 25px;
       }
       .type{
-        margin-left: 100px;
-        margin-right: 100px;
+        margin-left: auto;
+        white-space: nowrap;
+      }
+    }
+    @media (max-width: 768px) {
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        .title {
+          font-size: 18px;
+        }
+        .sub {
+          font-size: 18px;
+        }
+        .type {
+          margin-left: auto;
+          margin-right: 0;
+          display: block;
+          width: 100%;
+          text-align: left;
+          font-size: 14px;
+        }
       }
     }
     .credits{
       padding: 4px;
       padding-right: 8px;
       display:flex;
-      flex-grow: 1;
-      // width: 100%;
       align-items: end;
       justify-content: flex-end;
       p{
@@ -612,6 +634,9 @@ p, h1, h2{
   }
 }
 
+.four .item .credits {
+  flex: 0 0 30px;
+}
 
 
 .five{
