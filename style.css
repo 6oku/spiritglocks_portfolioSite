@@ -934,9 +934,9 @@ p, h1, h2{
 
 @media (max-width: 768px) {
   #asciiArt {
-    font-size: clamp(3px, 1.6vw, 6px);
-    line-height: 0.85;
-    letter-spacing: 0.12em;
+    font-size: clamp(2.6px, 0.9vw, 5px);
+    line-height: 0.9;
+    letter-spacing: 0.05em;
     margin: -4vh auto 0;
   }
 }
