@@ -932,6 +932,15 @@ p, h1, h2{
   white-space: pre;
 }
 
+@media (max-width: 768px) {
+  #asciiArt {
+    font-size: clamp(3px, 1.6vw, 6px);
+    line-height: 0.85;
+    letter-spacing: 0.12em;
+    margin: -4vh auto 0;
+  }
+}
+
 /* Theme toggle image */
 .spiritgraff-toggle {
   text-align: center;
