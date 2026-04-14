@@ -544,6 +544,11 @@ p, h1, h2{
   h1[contenteditable]:focus{
     outline: none;
   }
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 13.3vw;
+    }
+  }
   h1:hover{
     color: var(--bg);
     -webkit-text-stroke: 1px var(--text);
