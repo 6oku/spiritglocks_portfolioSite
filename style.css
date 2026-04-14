@@ -991,7 +991,7 @@ html, body {
 
 @media (max-width: 480px) {
   #asciiArt {
-    transform: scaleX(2) scaleY(2);
+    transform: scaleX(1.6) scaleY(2);
   }
 }
 
