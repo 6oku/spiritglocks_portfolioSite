@@ -531,11 +531,18 @@ p, h1, h2{
   h1{
     font-family: sans-serif;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     text-align: center;
     font-size: 13.5vw;
     font-weight: normal;
     margin-bottom: 10vh;
     letter-spacing: -.05em;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  h1[contenteditable]:focus{
+    outline: none;
   }
   h1:hover{
     color: var(--bg);
@@ -543,20 +550,6 @@ p, h1, h2{
     transition: all 0.35s ease-in-out;
   }
 
-}
-
-/* Prevent mobile Safari from opening keyboard / caret-scrolling when tapping
-   the hero h1. Keeps contenteditable on desktop, disables it on touch sizes. */
-@media (max-width: 768px) {
-  .one h1[contenteditable] {
-    -webkit-user-modify: read-only;
-    -moz-user-modify: read-only;
-    user-select: none;
-    -webkit-user-select: none;
-  }
-  .one h1[contenteditable]:focus {
-    outline: none;
-  }
 }
 
 .two{
