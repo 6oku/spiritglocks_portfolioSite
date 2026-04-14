@@ -534,7 +534,7 @@ p, h1, h2{
     max-width: 100%;
     box-sizing: border-box;
     text-align: center;
-    font-size: 13.4vw;
+    font-size: 13.5vw;
     font-weight: normal;
     margin-bottom: 10vh;
     letter-spacing: -.05em;
@@ -543,12 +543,6 @@ p, h1, h2{
   }
   h1[contenteditable]:focus{
     outline: none;
-  }
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 13.3vw;
-      width: 98%;
-    }
   }
   h1:hover{
     color: var(--bg);
@@ -962,6 +956,11 @@ p, h1, h2{
 }
 
 /* ASCII hero */
+.ascii-wrap {
+  width: 100%;
+  overflow: hidden;
+}
+
 #asciiArt {
   font-family: monospace;
   font-size: clamp(2.4px, 0.72vw, 10px);
