@@ -268,7 +268,7 @@
     margin-bottom: 30px;
   }
   body{
-    margin: 10px;
+    margin: 0 10px 10px;
     background: var(--bg);
     color: var(--text);
     font-family: "Geist Mono";
@@ -290,7 +290,7 @@
   
   @media (max-width: 727px) {
     body{
-      margin: 8px;
+      margin: 0 8px 8px;
 
     }
     .lg{
@@ -958,7 +958,13 @@ p, h1, h2{
 /* ASCII hero */
 .ascii-wrap {
   width: 100%;
-  overflow: hidden;
+}
+
+/* Clip horizontal overflow at the viewport edge, not at the body margin.
+   Uses `clip` (not `hidden`) so it doesn't establish a scroll container
+   and therefore doesn't break position: sticky on descendants. */
+html, body {
+  overflow-x: clip;
 }
 
 #asciiArt {
@@ -985,7 +991,7 @@ p, h1, h2{
 
 @media (max-width: 480px) {
   #asciiArt {
-    transform: scaleX(1.6) scaleY(2);
+    transform: scaleX(2) scaleY(2);
   }
 }
 
