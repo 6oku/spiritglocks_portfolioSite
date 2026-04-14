@@ -547,6 +547,7 @@ p, h1, h2{
   @media (max-width: 768px) {
     h1 {
       font-size: 13.3vw;
+      width: 98%;
     }
   }
   h1:hover{
