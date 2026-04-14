@@ -968,7 +968,7 @@ html, body {
 }
 
 #asciiArt {
-  font-family: monospace;
+  font-family: 'Geist Mono', ui-monospace, Menlo, Consolas, monospace;
   font-size: clamp(2.4px, 0.72vw, 10px);
   line-height: 1.05;
   text-align: center;
