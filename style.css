@@ -493,7 +493,7 @@ p, h1, h2{
 .one{
   box-sizing: border-box;
   padding: 1vw;
-  min-height:70vh;
+  min-height:65vh;
   position:sticky;
   overflow: visible;
   width: 100%;
