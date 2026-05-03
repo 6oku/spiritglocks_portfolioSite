@@ -1,10 +1,18 @@
 const main = document.querySelector('main')
 var imgs = document.querySelectorAll('.thing > img');
 var open = false;
+var currentIndex = -1;
+
+var typeSection = document.getElementById('type');
+var workImgs = Array.from(imgs).filter(function(img) {
+  return !typeSection || (img.compareDocumentPosition(typeSection) & Node.DOCUMENT_POSITION_FOLLOWING);
+});
 
 imgs.forEach(function(img){
   img.onclick = (e) =>{
     var target = e.target;
+    var idx = workImgs.indexOf(target);
+    if (idx !== -1) currentIndex = idx;
     openMe(target.src)
   }
 
@@ -18,6 +26,19 @@ imgs.forEach(function(img){
     }
   }
 })
+
+document.addEventListener('keydown', function(e) {
+  if (!open || currentIndex === -1) return;
+  if (e.key === 'ArrowRight') {
+    currentIndex = (currentIndex + 1) % workImgs.length;
+    document.querySelector('.window img').src = workImgs[currentIndex].src;
+  } else if (e.key === 'ArrowLeft') {
+    currentIndex = (currentIndex - 1 + workImgs.length) % workImgs.length;
+    document.querySelector('.window img').src = workImgs[currentIndex].src;
+  } else if (e.key === 'Escape') {
+    closeMe();
+  }
+});
 
 document.querySelector('.window').onclick = () =>{
   closeMe()
