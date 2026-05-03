@@ -865,8 +865,8 @@ p, h1, h2{
 .fontplay .title {
   margin: 0;
   font-family: 'POR7AL', sans-serif;
-  color: transparent;
-  -webkit-text-stroke: 1.2px var(--stroke);
+  color: var(--text);
+  -webkit-text-stroke: 0px;
   display: inline-block;
   font-size: 20vh;
   text-rendering: optimizeLegibility;
@@ -874,14 +874,15 @@ p, h1, h2{
 }
 
 .fontplay .title:hover {
-  color: var(--text);
+  color: transparent;
+  -webkit-text-stroke: 1.2px var(--stroke);
 }
 
 .fontplay2 .title {
   margin: 0;
   font-family: 'Kodama';
-  color: transparent;
-  -webkit-text-stroke: 1.2px var(--stroke);
+  color: var(--text);
+  -webkit-text-stroke: 0px;
   display: inline-block;
   font-size: 14vh;
   line-height: 0.85;
@@ -891,8 +892,8 @@ p, h1, h2{
 }
 
 .fontplay2 .title:hover {
-  color: var(--text);
-  -webkit-text-stroke: 0px;
+  color: transparent;
+  -webkit-text-stroke: 1.2px var(--stroke);
 }
 
 .slider-label {
