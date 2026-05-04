@@ -862,6 +862,15 @@ p, h1, h2{
   align-items: center;
 }
 
+.fontplay .title:focus,
+.fontplay2 .title:focus {
+  outline: none;
+  caret-color: var(--text);
+  text-align: left;
+  min-height: 1em;
+  width: 100%;
+}
+
 .fontplay .title {
   margin: 0;
   font-family: 'POR7AL', sans-serif;

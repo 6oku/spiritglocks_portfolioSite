@@ -576,7 +576,7 @@
 
                 <!-- ARENA LEDS -->
     <div class="container">
-        
+
       <div class="col lg">
         <div class="thing">
           <img class="" loading="lazy" decoding="async" src="./img/mikeconley.webp" alt="">
@@ -1083,6 +1083,32 @@ window.addEventListener('DOMContentLoaded', () => {
 
   setupFontSlider('fontSizeSlider1', 'editableTitle1', 'fontSizeValue1');
   setupFontSlider('fontSizeSlider2', 'editableTitle2', 'fontSizeValue2');
+
+  document.querySelectorAll('#editableTitle1, #editableTitle2').forEach(function(el) {
+    el.setAttribute('data-placeholder', el.textContent.trim());
+    el.classList.add('is-placeholder');
+    el.addEventListener('mousedown', function(e) {
+      if (el.classList.contains('is-placeholder')) {
+        e.preventDefault();
+        el.classList.remove('is-placeholder');
+        el.textContent = '';
+        el.focus();
+        var sel = window.getSelection();
+        var range = document.createRange();
+        range.setStart(el, 0);
+        range.collapse(true);
+        sel.removeAllRanges();
+        sel.addRange(range);
+      }
+    });
+    el.addEventListener('blur', function() {
+      var text = el.textContent.trim();
+      if (text === '') {
+        el.textContent = el.getAttribute('data-placeholder');
+        el.classList.add('is-placeholder');
+      }
+    });
+  });
 </script>
 
 <script>
